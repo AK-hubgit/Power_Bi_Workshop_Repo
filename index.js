@@ -41,4 +41,3 @@ function updateTime() {
 // Call the function to update the date
 updateTime();
 
-// Power_Bi_Intro_looping_ video.mp4
