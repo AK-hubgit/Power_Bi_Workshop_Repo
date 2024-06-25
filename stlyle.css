@@ -296,6 +296,12 @@ h1 {
 .adjustVidHeight {
   width: 300px;
 }
+/* @ */
+@media only screen and (max-width: 768px) {
+  .video-container video {
+    width: 300px;
+  }
+}
 
 /* close video player */
 .close-btn {
