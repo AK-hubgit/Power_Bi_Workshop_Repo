@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 * {
@@ -160,7 +159,7 @@ a {
 #flexContainer,
 .flexbox {
   display: flex;
-  width: 80%;
+  width: 90%;
   justify-content: space-between;
   margin: 0 auto;
 }
@@ -235,6 +234,7 @@ h1 {
 }
 .popSize {
   font-size: var(--fs3rem);
+  margin-block-end: 0;
 }
 .popSize + p {
   font-size: 1.5rem;
