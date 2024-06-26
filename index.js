@@ -3,7 +3,7 @@ window.addEventListener("scroll", function () {
   let videoContainer = document.getElementById("videoContainer");
   let videoHeight = document.getElementById("videoHeight");
   let show_Button = document.getElementById("show_Button");
-  if (window.scrollY > 1110) {
+  if (window.scrollY > 1100) {
     // Adjust this value as needed
     videoContainer.classList.add("sticky");
     videoHeight.setAttribute("class", "adjustVidHeight");
@@ -41,4 +41,3 @@ function updateTime() {
 // Call the function to update the date
 updateTime();
 
-// Power_Bi_Intro_looping_ video.mp4
