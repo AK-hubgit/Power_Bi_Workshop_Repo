@@ -160,7 +160,6 @@ a {
 .flexbox {
   display: flex;
   width: 90%;
-  justify-content: space-between;
   margin: 0 auto;
 }
 #section2 h1 {
@@ -223,6 +222,7 @@ h1 {
   font-weight: bolder;
 }
 
+
 /*  SECTION -4 & SECTION -6 included  */
 #section4 {
   width: 90%;
@@ -278,14 +278,16 @@ h1 {
 }
 
 /* div sticks right according to mouse scrolled */
-
+.adjustVidHeight {
+  width: 300px;
+}
 .video-container {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   top: auto;
   right: auto;
-  /* transition: all 3s ease; */
+  overflow: hidden;
 }
-.video-container.sticky {
+.sticky {
   position: fixed;
   top: 10px;
   right: 10px;
@@ -293,23 +295,19 @@ h1 {
   transition: all 2s linear 1s;
   z-index: 1;
 }
-.adjustVidHeight {
-  width: 300px;
+/* .video-container.sticky .close-button {
+  display: block;
 }
-/* @ */
-@media only screen and (max-width: 768px) {
-  .video-container video {
-    width: 300px;
-  }
-}
-
+ */
 /* close video player */
-.close-btn {
-  /* position: absolute; */
-  /* right: 10px; */
-  bottom: 0;
-  /* z-index: 10; */
-  justify-self: center;
+.showButton {
+  display: none;
+}
+.close-button:hover {
+  background: #cc0000;
+}
+.close-button {
+  margin: 0 auto;
   background: #ff0000;
   color: #fff;
   border: none;
@@ -318,13 +316,6 @@ h1 {
   height: 30px;
   font-size: 20px;
   cursor: pointer;
-}
-.showButton {
-  display: none;
-}
-
-.close-btn:hover {
-  background: #cc0000;
 }
 
 /* SECTION - 5 */
