@@ -1,27 +1,34 @@
 // div sticks right according to mouse scrolled
 window.addEventListener("scroll", function () {
-  let videoContainer = document.getElementById("videoContainer");
-  let videoHeight = document.getElementById("videoHeight");
+  var videoContainer = document.getElementById("videoContainer");
+  var videoHeight = document.getElementById("videoHeight");
+  var closeButton = document.getElementById("closeButton");
   let show_Button = document.getElementById("show_Button");
+
   if (window.scrollY > 1100) {
-    // Adjust this value as needed
-    videoContainer.classList.add("sticky");
-    videoHeight.setAttribute("class", "adjustVidHeight");
-    show_Button.classList.remove("showButton");
+    if (!videoContainer.classList.contains("closed")) {
+      videoContainer.classList.add("sticky");
+      videoHeight.setAttribute("class", "adjustVidHeight");
+      closeButton.style.display = "block";
+      show_Button.classList.remove("showButton");
+    }
   } else {
     videoContainer.classList.remove("sticky");
     videoHeight.removeAttribute("class", "adjustVidHeight");
+    closeButton.style.display = "none";
     show_Button.classList.add("showButton");
   }
 });
 
-// close video button
-document.getElementById("closeBtn").addEventListener("click", function () {
-  let videoContainer = document.getElementById("videoContainer");
+document.getElementById("closeButton").addEventListener("click", function () {
+  var videoContainer = document.getElementById("videoContainer");
+  var videoHeight = document.getElementById("videoHeight");
+  var closeButton = document.getElementById("closeButton");
 
+  videoContainer.classList.add("closed");
   videoContainer.classList.remove("sticky");
-  videoHeight.removeAttribute("class", "adjustVidHeight");
-  show_Button.classList.add("showButton");
+  videoHeight.pause();
+  closeButton.style.display = "none";
 });
 
 // Time function ( offer ends before tmr midnight )
@@ -41,3 +48,4 @@ function updateTime() {
 // Call the function to update the date
 updateTime();
 
+// Power_Bi_Intro_looping_ video.mp4
