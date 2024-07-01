@@ -1,3 +1,5 @@
+/* file updated */
+
 body {
   margin: 0;
   padding: 0;
@@ -166,9 +168,9 @@ a {
 }
 @media (max-width: 767px) {
   #flexContainer,
-.flexbox {
-display: block;
-}
+  .flexbox {
+    display: block;
+  }
 }
 #section2 h1 {
   display: inline-block;
@@ -282,7 +284,8 @@ h1 {
     width: 100%;
     display: block;
   }
-  .container > div, .box {
+  .container > div,
+  .box {
     width: 100%;
   }
 }
@@ -350,7 +353,6 @@ h1 {
     width: 100%;
   }
 }
-
 
 /* SECTION - 5 */
 
