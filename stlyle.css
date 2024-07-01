@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 * {
@@ -341,7 +342,6 @@ h1 {
   --setWidth: 50vw;
   border-left: var(--setWidth) solid transparent;
   border-right: var(--setWidth) solid transparent;
-  /* border-top: 50px solid #1c1330; */
   border-top: 10vh solid #1c1330;
 }
 .arrow-container .highlightYellow {
