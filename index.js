@@ -24,11 +24,23 @@ document.getElementById("closeButton").addEventListener("click", function () {
   var videoContainer = document.getElementById("videoContainer");
   var videoHeight = document.getElementById("videoHeight");
   var closeButton = document.getElementById("closeButton");
+  var playButton = document.getElementById("playButton");
 
   videoContainer.classList.add("closed");
   videoContainer.classList.remove("sticky");
   videoHeight.pause();
   closeButton.style.display = "none";
+  playButton.style.display = "block";
+
+});
+
+// video play button
+document.getElementById("playButton").addEventListener("click", function () {
+  var video = document.getElementById("videoHeight");
+  var playButton = document.getElementById("playButton");
+  video.play();
+  console.log("closed");
+  playButton.style.display = "none";
 });
 
 // Time function ( offer ends before tmr midnight )
