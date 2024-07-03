@@ -183,6 +183,7 @@ a {
 .flexItems input {
   height: 30px;
   width: 30px;
+  accent-color: rgb(20, 204, 20);
 }
 .flexbox {
   background-color: white;
@@ -322,12 +323,30 @@ h1 {
   width: 300px;
 }
 .video-container {
+  position: relative;
   width: fit-content;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  top: auto;
-  right: auto;
-  /* overflow: hidden; */
+}
+
+/* Play Video */
+.video-container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+#playButton {
+  display: none;
 }
 .sticky {
   position: fixed;
@@ -337,9 +356,7 @@ h1 {
   transition: all 2s linear 1s;
   z-index: 1;
 }
-/* #videoHeight {
-  width: 500px;
-} */
+
 /* close video player */
 .showButton {
   display: none;
@@ -366,6 +383,7 @@ h1 {
   }
 }
 
+
 /* SECTION - 5 */
 
 .arrow-container {
@@ -380,18 +398,6 @@ h1 {
   margin-block-end: 1rem;
   display: inline-block;
 }
-/* .arrow-container:after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 0;
-  --setWidth: 50vw;
-  border-left: var(--setWidth) solid transparent;
-  border-right: var(--setWidth) solid transparent;
-  border-top: 10vh solid #1c1330;
-} */
 .arrow-container .highlightYellow {
   font-size: var(--fs3rem);
   color: var(--highlightYellow);
@@ -557,9 +563,6 @@ h1 {
 }
 
 /* SECTION - 7 */
-/* #section7 {
-  margin-block-end: 1rem;
-} */
 .arrow-containerCopy.section7 {
   background-image: none;
 }
@@ -591,13 +594,11 @@ h1 {
 }
 .grid-container span {
   display: block;
-  /* margin-right: 0.4em; */
   margin: 1em;
 }
 .column-1,
 .column-2 {
   height: min-content;
-  /* padding: 1rem; */
 }
 #mentInfo {
   text-align: justify;
@@ -632,7 +633,6 @@ h1 {
 
 .certifi {
   margin: 0 auto;
-  /* margin: 0; */
 }
 .certifi h1 {
   font-size: var(--fs3rem);

@@ -40,15 +40,27 @@
       </div>
       <!-- video goes here -->
       <div class="video-container" id="videoContainer">
+        <!-- src="assets/videos/Power_Bi_Intro_looping_video.mp4" -->
         <video
           id="videoHeight"
-          src="assets/videos/Power_Bi_Intro_looping_video.mp4"
           autoplay
           width="500px"
           loop
           muted
           style="border-radius: 5px"
-        ></video>
+        >
+          <source
+            src="assets/videos/Power_Bi_Intro_looping_video.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="assets/videos/Power_Bi_Intro_looping_video.webm"
+            type="video/webm"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <button id="playButton" class="btn">Play Video</button>
+
         <div class="showButton" id="show_Button">
           <button class="close-button" id="closeButton">&times;</button>
         </div>
@@ -118,7 +130,7 @@
     <!-- SECTIOIN - 2 -->
 
     <section id="section2">
-      <form action="#" method="post">
+      <form action="contact.html" method="post">
         <div class="section2title">
           <h1>Please Check All Boxes Where Your Answer Is YES!</h1>
         </div>
