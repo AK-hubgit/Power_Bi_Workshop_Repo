@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SubmitAnswers</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: whitesmoke;
+      }
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      /* flexes */
+      #ContactUs,
+      #ContactUs > div,
+      .fItems {
+        display: flex;
+      }
+      #ContactUs {
+        width: 80%;
+        height: 70%;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2),
+          0px 10px 5px 0px rgba(0, 0, 0, 0.19);
+        border-radius: 10px;
+      }
+      #ContactUs > div {
+        width: calc(100% / 2);
+        background-color: white;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+      }
+      .box1 {
+        background-image: url(assets/Images/Pbi_Ybg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-position-x: -150px;
+        border-radius: 10px 0px 0px 10px;
+      }
+      .box2 {
+        background: rgb(255, 255, 255);
+        background: -moz-linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 1) 56%,
+          rgba(245, 245, 245, 1) 73%
+        );
+        background: -webkit-linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 1) 56%,
+          rgba(245, 245, 245, 1) 73%
+        );
+        background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 1) 56%,
+          rgba(245, 245, 245, 1) 88%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#f5f5f5",GradientType=1);
+        border-radius: 0px 10px 10px 0px;
+      }
+      form {
+        margin: 2rem;
+      }
+      .fItems {
+        background-color: whitesmoke;
+        margin-block-end: 10px;
+        padding: 10px;
+      }
+      .rgba {
+        opacity: 0.6;
+      }
+      input,
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        background-color: whitesmoke;
+        resize: none;
+      }
+      .fItems:hover input[id], .fItems:hover textarea[id], .fItems:hover {
+        background-color: orange;
+      }
+      button {
+        text-decoration: none;
+        cursor: pointer;
+        width: 100%;
+        padding: 5px;
+        background-color: orange;
+        outline: none;
+        border: none;
+      }
+      button:hover {
+        background-color: rgba(255, 166, 0, 0.778);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="ContactUs">
+      <div class="box1"></div>
+      <div class="box2">
+        <form id="contactForm" action="#">
+          <h2 style="margin-block-start: 0; font-size: 2rem;">
+            <span style="color: orange">Confirm</span> Choices
+          </h2>
+          <div class="fItems">
+            <label for="name">
+              <!-- user -->
+              <svg
+                class="rgba"
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              >
+                <path
+                  d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm8.127 19.41c-.282-.401-.772-.654-1.624-.85-3.848-.906-4.097-1.501-4.352-2.059-.259-.565-.19-1.23.205-1.977 1.726-3.257 2.09-6.024 1.027-7.79-.674-1.119-1.875-1.734-3.383-1.734-1.521 0-2.732.626-3.409 1.763-1.066 1.789-.693 4.544 1.049 7.757.402.742.476 1.406.22 1.974-.265.586-.611 1.19-4.365 2.066-.852.196-1.342.449-1.623.848 2.012 2.207 4.91 3.592 8.128 3.592s6.115-1.385 8.127-3.59zm.65-.782c1.395-1.844 2.223-4.14 2.223-6.628 0-6.071-4.929-11-11-11s-11 4.929-11 11c0 2.487.827 4.783 2.222 6.626.409-.452 1.049-.81 2.049-1.041 2.025-.462 3.376-.836 3.678-1.502.122-.272.061-.628-.188-1.087-1.917-3.535-2.282-6.641-1.03-8.745.853-1.431 2.408-2.251 4.269-2.251 1.845 0 3.391.808 4.24 2.218 1.251 2.079.896 5.195-1 8.774-.245.463-.304.821-.179 1.094.305.668 1.644 1.038 3.667 1.499 1 .23 1.64.59 2.049 1.043z"
+                  style="stroke: black; stroke-width: 1px"
+                />
+              </svg>
+            </label>
+            <input
+              placeholder="Name*"
+              autocomplete="on"
+              type="text"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+          <div class="fItems">
+            <label for="email">
+              <!-- mail -->
+              <svg
+                class="rgba"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.021 17.824c-3.907 0-6.021-2.438-6.021-5.586 0-3.363 2.381-6.062 6.638-6.062 3.107 0 5.362 2.019 5.362 4.801 0 4.356-5.165 5.506-4.906 3.021-.354.555-.927 1.177-2.026 1.177-1.257 0-2.04-.92-2.04-2.403 0-2.222 1.461-4.1 3.19-4.1.829 0 1.399.438 1.638 1.11l.232-.816h1.169c-.122.416-1.161 4.264-1.161 4.264-.323 1.333.675 1.356 1.562.648 1.665-1.29 1.75-4.664-.499-6.071-2.411-1.445-7.897-.551-7.897 4.347 0 2.806 1.976 4.691 4.914 4.691 1.719 0 2.771-.465 3.648-.974l.588.849c-.856.482-2.231 1.104-4.391 1.104zm-1.172-7.153c-.357.67-.588 1.538-.588 2.212 0 1.805 1.761 1.816 2.626.12.356-.697.586-1.586.586-2.265 0-1.458-1.748-1.717-2.624-.067z"
+                />
+              </svg>
+            </label>
+            <input
+              placeholder="mail.com*"
+              autocomplete="on"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="fItems">
+            <label for="message">
+              <!-- message -->
+              <svg
+                class="rgba"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 3c5.514 0 10 3.592 10 8.007 0 4.917-5.145 7.961-9.91 7.961-1.937 0-3.383-.397-4.394-.644-1 .613-1.595 1.037-4.272 1.82.535-1.373.723-2.748.602-4.265-.838-1-2.025-2.4-2.025-4.872-.001-4.415 4.485-8.007 9.999-8.007zm0-2c-6.338 0-12 4.226-12 10.007 0 2.05.738 4.063 2.047 5.625.055 1.83-1.023 4.456-1.993 6.368 2.602-.47 6.301-1.508 7.978-2.536 1.418.345 2.775.503 4.059.503 7.084 0 11.91-4.837 11.91-9.961-.001-5.811-5.702-10.006-12.001-10.006zm0 14h-5v-1h5v1zm5-3h-10v-1h10v1zm0-3h-10v-1h10v1z"
+                />
+              </svg>
+            </label>
+            <textarea
+              placeholder="Interact With Us"
+              id="message"
+              name="message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">
+            <!-- Submit -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 12l11 3.1 7-8.1-8.156 5.672-4.312-1.202 15.362-7.68-3.974 14.57-3.75-3.339-2.17 2.925v-.769l-2-.56v7.383l4.473-6.031 4.527 4.031 6-22z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script async defer>
+      const form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        };
+
+        fetch("WAITING FOR OFFICIAL GMAIL ID FROM THE TEAM", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            alert("Form submitted successfully!");
+            form.reset();
+          })
+          .catch((error) => {
+            /* console. */ error("Error:", error);
+            alert("There was an error submitting the form.");
+          });
+      });
+    </script>
+  </body>
+</html>
