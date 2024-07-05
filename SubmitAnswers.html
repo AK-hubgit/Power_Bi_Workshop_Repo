@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="" />
     <style>
+      /* Status s*/
       body {
         margin: 0;
         padding: 0;
@@ -16,6 +17,9 @@
       }
       * {
         font-family: Arial, Helvetica, sans-serif;
+      }
+      :root {
+        --highlightorange: rgb(255, 119, 0);
       }
       /* common flex styling */
       #ContactUs,
@@ -42,11 +46,13 @@
         text-align: left;
       }
       .box1 {
-        background-image: url(assets/Images/Pbi_Ybg.png);
-        background-size: cover;
+        /* background-image: url(assets/Images/Pbi_Ybg.png); */
+        background-image: url(assets/gif/gipy6.webp);
+        /* background-size: cover; */
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        background-position-x: -150px;
+        background-position-y: 0px;
         border-radius: 10px 0px 0px 10px;
       }
       .box2 {
@@ -91,7 +97,9 @@
         background-color: whitesmoke;
         resize: none;
       }
-      .fItems:hover input[id], .fItems:hover textarea[id], .fItems:hover {
+      .fItems:hover input[id],
+      .fItems:hover textarea[id],
+      .fItems:hover {
         background-color: orange;
       }
       button {
@@ -99,12 +107,18 @@
         cursor: pointer;
         width: 100%;
         padding: 5px;
-        background-color: orange;
+        background-color: var(--highlightorange);
         outline: none;
         border: none;
       }
       button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+          0 17px 50px 0 rgba(0, 0, 0, 0.19);
         background-color: rgba(255, 166, 0, 0.778);
+      }
+      button:active {
+        background-color: var(--highlightorange);
+        transform: translateY(4px);
       }
     </style>
   </head>
@@ -114,8 +128,8 @@
       <div class="box1"></div>
       <div class="box2">
         <form id="contactForm" action="#">
-          <h2 style="margin-block-start: 0; font-size: 2rem;">
-            <span style="color: orange">Confirm</span> Choices
+          <h2 style="margin-block-start: 0; font-size: 2rem">
+            <span style="color: var(--highlightorange)">Confirm</span> Choices
           </h2>
           <div class="fItems">
             <label for="name">
@@ -189,7 +203,7 @@
               required
             ></textarea>
           </div>
-          <button type="submit">
+          <button onclick="handleClick()" type="submit">
             <!-- Submit -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -207,6 +221,11 @@
     </div>
 
     <script async defer>
+
+    const handleClick = () => {
+      console.log('clicked');
+    }
+
       const form = document.getElementById("contactForm");
 
       form.addEventListener("submit", (e) => {
@@ -236,6 +255,9 @@
             alert("There was an error submitting the form.");
           });
       });
+
+
+       
     </script>
   </body>
 </html>

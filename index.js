@@ -56,8 +56,11 @@ function updateTime() {
 
   timeElement.textContent = futureDate;
 }
-
 // Call the function to update the date
 updateTime();
 
-// Power_Bi_Intro_looping_ video.mp4
+// google scripts
+function handleClick() {
+  google.script.run.isClicked();
+}
+
