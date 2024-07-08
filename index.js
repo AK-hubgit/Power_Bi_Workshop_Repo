@@ -81,14 +81,16 @@ document.getElementById("submitChecked").addEventListener("click", function () {
   }, 1500); // 3 seconds delay
 
 
-  /*   const element = document.getElementsByTagName("input")[0];
+  /*
+  const element = document.getElementsByTagName("input")[0];
   const attr = element.getAttributeNode("type");
 
   if(attr !== "checked"){
     element.removeAttributeNode(attr);
     console.log("click");
-  } */
-/* 
+  } 
+  */
+  /* 
     const inputs = document.getElementsByTagName("input")
     if (inputs.hasAttribute("type")) {
       inputs.setAttribute("type", "");
