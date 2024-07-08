@@ -31,7 +31,6 @@ document.getElementById("closeButton").addEventListener("click", function () {
   videoHeight.pause();
   closeButton.style.display = "none";
   playButton.style.display = "block";
-
 });
 
 // video play button
@@ -63,4 +62,36 @@ updateTime();
 function handleClick() {
   google.script.run.isClicked();
 }
+
+// submitChecked
+document.getElementById("submitChecked").addEventListener("click", function () {
+  let button = document.getElementById("submitChecked");
+  let message = document.getElementById("submissionMessage");
+  console.log("click");
+
+  // Hide the button and show the message
+  button.style.display = "none";
+  message.style.display = "block";
+
+  // Set a timeout to revert back to the original state
+  setTimeout(function () {
+    message.style.display = "none";
+    button.style.display = "inline-block";
+    // button.style.display = 'block';
+  }, 1500); // 3 seconds delay
+
+
+  /*   const element = document.getElementsByTagName("input")[0];
+  const attr = element.getAttributeNode("type");
+
+  if(attr !== "checked"){
+    element.removeAttributeNode(attr);
+    console.log("click");
+  } */
+/* 
+    const inputs = document.getElementsByTagName("input")
+    if (inputs.hasAttribute("type")) {
+      inputs.setAttribute("type", "");
+    } */
+});
 
