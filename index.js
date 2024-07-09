@@ -1,3 +1,28 @@
+// Get the button
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Add an event listener to the window for scroll events
+window.onscroll = function () {
+  toggleScrollToTopBtn();
+};
+
+function toggleScrollToTopBtn() {
+  // Check the scroll position
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    scrollToTopBtn.style.display = "block";
+  } else {
+    scrollToTopBtn.style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  // Scroll to the top smoothly
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 // div sticks right according to mouse scrolled
 window.addEventListener("scroll", function () {
   var videoContainer = document.getElementById("videoContainer");
