@@ -20,6 +20,12 @@
         --highlightgreen: rgb(10, 132, 10);
         --highlightOrange: rgb(255, 119, 0);
         --bgMidtoneBlue: rgb(6, 2, 80);
+        --bgGradientBlue: linear-gradient(
+          0deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 63%,
+          rgb(1, 88, 107) 100%
+        );
       }
       a {
         text-decoration: none;
@@ -38,10 +44,10 @@
           0px 10px 5px 0px rgba(0, 0, 0, 0.19);
         border-radius: 10px;
       }
-      #flexcontainer {
+      #flexcontainer,
+      #colLay {
         display: flex;
       }
-
       .column {
         background-color: #f9f9f9;
         display: flex;
@@ -50,11 +56,56 @@
         margin: 10px;
         justify-content: space-evenly;
       }
-      /*   .column:first-child {
-        width: 20%;
-        text-align: center;
-      } */
-      /* .column:last-child, .column:nth-last-child(2) { */
+      #colLay > div:first-of-type {
+        width: 80%;
+      }
+      @media (max-width: 768px) {
+        .column {
+          flex-wrap: wrap;
+          gap: 5px;
+          margin: 5px;
+        }
+        #colLay > :nth-of-type(2) {
+          padding: 0.5rem !important;
+        }
+        #setOpac2 {
+          margin-block-end: 0;
+        }
+      }
+      @media (max-width: 426px) {
+        body {
+          overflow: visible;
+        }
+        .container {
+          width: 95%;
+          margin-block: 1rem;
+          top: 0;
+          transform: none;
+        }
+        #flexcontainer,
+        #colLay {
+          display: block;
+        }
+        #flexcontainer :first-child {
+          flex-direction: row;
+        }
+        #colLay > div:first-of-type {
+          margin: 0 auto;
+        }
+        #title h1 {
+          font-size: 1.5rem;
+        }
+        [id^="setOpac"] {
+          width: 40%;
+          flex-direction: row;
+        }
+        [id^="setOpac"] p {
+          margin: 0;
+        }
+        #colLay .column > div {
+          width: 100%;
+        }
+      }
       #div1,
       #div2 {
         width: 100%;
@@ -62,6 +113,13 @@
       #div1 p,
       #div2 p {
         margin: 0;
+        margin-block-end: 6px;
+      }
+      #nxt p {
+        margin: 0;
+      }
+      #oto p {
+        margin-block-end: 12px;
       }
       .item {
         margin-block-end: 10px;
@@ -95,21 +153,23 @@
         padding: 5px;
         outline: none;
         border: none;
+        border-radius: 10px;
       }
-      /*   button:hover {
-      } */
       .cat {
         background-color: var(--highlightOrange);
       }
-      .nxt {
+      #nxt {
         background-color: var(--highlightgreen);
+      }
+      #nxt:hover {
+        background-color: rgb(20, 229, 20);
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div id="title">
-        <h1>Unlock Your Exclusive Bonuses, NOW!</h1>
+        <h1 style="margin-top: 0">Unlock Your Exclusive Bonuses, NOW!</h1>
       </div>
       <div id="flexcontainer">
         <div class="column">
@@ -120,7 +180,7 @@
               <p>Fill Your Details</p>
             </button>
           </div>
-          <div class="item" id="setOpac2" style="opacity: 0.1;">
+          <div class="item" id="setOpac2" style="opacity: 0.1">
             <button class="cat" onclick="showDiv('div2','setOpac2')">
               <h1>2</h1>
               <p>Payment</p>
@@ -130,42 +190,61 @@
         </div>
         <div id="div1">
           <!-- id="div1" -->
-          <div class="column">
-            <div class="item">
-              <label for="Name">Name *</label>
-              <input type="text" name="Name" id="Name" />
+          <div id="colLay">
+            <div class="column">
+              <div class="item">
+                <label for="Name">Name *</label>
+                <input type="text" name="Name" id="Name" />
+              </div>
+              <div class="item">
+                <label for="Email">Email *</label>
+                <input type="text" name="Email" id="Email" />
+              </div>
+              <div class="item">
+                <label for="Phone">Phone *</label>
+                <input type="text" name="Phone" id="Phone" />
+              </div>
+              <button id="nxt" onclick="nextPage('div2')">
+                <p>READY TO AVAIL ?</p>
+                <p>GO NEXT STEP</p>
+              </button>
             </div>
-            <div class="item">
-              <label for="Email">Email *</label>
-              <input type="text" name="Email" id="Email" />
+            <div
+              class="column"
+              style="
+                padding: 1rem;
+                background-color: red;
+                color: white;
+                border-radius: 10px;
+              "
+            >
+              <p style="font-size: 2rem">Price For You</p>
+              <span style="font-size: 5rem">&#8377;99</span>
+              <p style="font-size: 2rem">Normal Price</p>
+              <span style="font-size: 3rem; text-decoration: line-through"
+                >&#8377;2000</span
+              >
             </div>
-            <div class="item">
-              <label for="Phone">Phone *</label>
-              <input type="text" name="Phone" id="Phone" />
-            </div>
-            <button class="nxt" onclick="nextPage('div2')">
-              <p>READY TO AVAIL ?</p>
-              <p>GO NEXT STEP</p>
-            </button>
           </div>
-  <!--         <div id="adv">
-            <p>test</p>
-          </div> -->
         </div>
 
         <!--  -->
-        <div id="div2" style="display: none">
+        <div id="div2" style="display: none; padding-block-end: 1rem">
           <!-- id="div2" -->
           <div class="column">
             <div class="item">
               <div class="row">
                 <div class="text-left">
-                  <p>Product</p>
+                  <p style="font-weight: bolder; margin-block-end: 12px">
+                    Product
+                  </p>
                   <p>Power BI Workshop × 1</p>
                   <p>GST 18%</p>
                 </div>
                 <div class="text-right">
-                  <p>Subtotal</p>
+                  <p style="font-weight: bolder; margin-block-end: 12px">
+                    Subtotal
+                  </p>
                   <p>₹17.87</p>
                   <p>₹117.12</p>
                 </div>
@@ -184,22 +263,22 @@
                     type="checkbox"
                     name="Phone"
                     id="Phone"
-                    style="width: fit-content"
+                    style="width: 20px; height: 20px"
                   />
-                  <label for="Phone">Yes, I will take it at 87% OFF!</label>
+                  <label for="Phone" style="width: 60%; font-weight: bold"
+                    >Yes, I will take it at 87% OFF!</label
+                  >
                 </div>
               </div>
             </div>
-            <!--    <div class="item">
-            <label for="Email">Email *</label>
-            <input type="text" name="Email" id="Email" />
-          </div> -->
             <div class="item">
               <div class="row">
-                <p for="Phone">Pay Securely using Kotak</p>
+                <p for="Phone" style="font-weight: bolder; margin: 0">
+                  Pay Securely using Kotak
+                </p>
               </div>
             </div>
-            <button class="nxt">
+            <button id="nxt">
               <p>Pay &</p>
               <p>Register</p>
             </button>
