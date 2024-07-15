@@ -67,7 +67,7 @@ a {
   color: black;
   border: none;
   border-radius: 5px;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
   cursor: pointer;
   z-index: 1;
 }
