@@ -8,10 +8,7 @@ window.onscroll = function () {
 
 function toggleScrollToTopBtn() {
   // Check the scroll position
-  if (
-    document.body.scrollTop > 20 ||
-    document.documentElement.scrollTop > 20
-  ) {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     scrollToTopBtn.style.display = "block";
   } else {
     scrollToTopBtn.style.display = "none";
@@ -25,9 +22,9 @@ function scrollToTop() {
 
 // div sticks right according to mouse scrolled
 window.addEventListener("scroll", function () {
-  var videoContainer = document.getElementById("videoContainer");
-  var videoHeight = document.getElementById("videoHeight");
-  var closeButton = document.getElementById("closeButton");
+  let videoContainer = document.getElementById("videoContainer");
+  let videoHeight = document.getElementById("videoHeight");
+  let closeButton = document.getElementById("closeButton");
   let show_Button = document.getElementById("show_Button");
 
   if (window.scrollY > 1100) {
@@ -46,10 +43,10 @@ window.addEventListener("scroll", function () {
 });
 
 document.getElementById("closeButton").addEventListener("click", function () {
-  var videoContainer = document.getElementById("videoContainer");
-  var videoHeight = document.getElementById("videoHeight");
-  var closeButton = document.getElementById("closeButton");
-  var playButton = document.getElementById("playButton");
+  let videoContainer = document.getElementById("videoContainer");
+  let videoHeight = document.getElementById("videoHeight");
+  let closeButton = document.getElementById("closeButton");
+  let playButton = document.getElementById("playButton");
 
   videoContainer.classList.add("closed");
   videoContainer.classList.remove("sticky");
@@ -60,14 +57,14 @@ document.getElementById("closeButton").addEventListener("click", function () {
 
 // video play button
 document.getElementById("playButton").addEventListener("click", function () {
-  var video = document.getElementById("videoHeight");
-  var playButton = document.getElementById("playButton");
+  let video = document.getElementById("videoHeight");
+  let playButton = document.getElementById("playButton");
   video.play();
   console.log("closed");
   playButton.style.display = "none";
 });
 
-// Time function ( offer ends before tmr midnight )
+/* // Time function ( offer ends before tmr midnight )
 
 function updateTime() {
   const timeElement = document.getElementById("dynamic-time");
@@ -81,7 +78,7 @@ function updateTime() {
   timeElement.textContent = futureDate;
 }
 // Call the function to update the date
-updateTime();
+updateTime(); */
 
 // google scripts
 function handleClick() {
@@ -105,7 +102,6 @@ document.getElementById("submitChecked").addEventListener("click", function () {
     // button.style.display = 'block';
   }, 1500); // 3 seconds delay
 
-
   /*
   const element = document.getElementsByTagName("input")[0];
   const attr = element.getAttributeNode("type");
@@ -122,3 +118,7 @@ document.getElementById("submitChecked").addEventListener("click", function () {
     } */
 });
 
+const redirectTo = () => {
+  window.location.href = "SubmitAnswers.html";
+  console.log("clicked");
+};

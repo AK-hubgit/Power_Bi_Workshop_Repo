@@ -78,7 +78,7 @@
         text-align: center;
         box-sizing: border-box;
         color: white;
-        padding: 1rem 2rem;
+        padding: 1rem;
       }
       .arrow-containerCopy .highlightYellow {
         font-size: var(--fs2rem);
@@ -93,29 +93,31 @@
 
       /* section - 6 */
       #bonus-container {
+        background-color: white;
         display: flex;
         margin: 0 auto;
+        padding-block-start: 9px;
         flex-wrap: wrap;
-        justify-content: center;
-        margin-block: 2rem;
+        justify-content: space-between;
+        margin-block: 1rem;
       }
       #bonus {
+        width: 29%;
+        box-sizing: border-box;
         position: relative;
         background-color: #f4f4f4;
         text-align: -webkit-center;
         border-radius: 10px;
         padding: 0.5rem;
         margin: 0.5rem;
-        margin-inline-end: 1rem;
-        margin-block-end: 1rem;
-        width: calc(100% / 4);
+        /* width: calc(100% / 4); */
       }
       #bonus p {
         margin: 0%;
       }
       #bonus div:first-child p {
         margin: 5px;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
       .bonus.icon {
         width: 40px;
@@ -123,16 +125,16 @@
       }
       .bonus-Box {
         width: fit-content;
-        margin-bottom: 1rem;
       }
       .bonus-Box.Item1 {
+        width: 100%;
         position: absolute;
         top: -10px;
         left: 50%;
         transform: translateX(-50%);
         background-color: rgba(2, 0, 36, 1);
         color: var(--highlightYellow);
-        padding-inline: 1.5rem;
+        /* padding-inline: 1.5rem; */
         border-radius: 5px;
       }
       .bonus-Box.Item2 {
@@ -140,7 +142,7 @@
       }
       .bonus-Box.Item3 {
         font-weight: bold;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       .bonus-Box.Item4 {
         padding: 0.5rem;
@@ -176,14 +178,20 @@
         #setOpac2 {
           margin-block-end: 0;
         }
+        #bonus {
+          width: 45%;
+          padding-block-end: 0;
+        }
       }
       @media (max-width: 426px) {
         body {
           overflow: visible;
         }
+        #parConatainer {
+          flex-wrap: wrap;
+        }
         .container {
           width: 95%;
-          margin-block: 1rem;
           top: 0;
           transform: none;
         }
@@ -200,7 +208,7 @@
         #title h1 {
           font-size: 1.5rem;
         }
-        [id^="setOpac"] {
+        #setOpac {
           width: 40%;
           flex-direction: row;
         }
@@ -215,6 +223,12 @@
         }
         .item {
           width: 100%;
+        }
+      }
+      @media (max-width: 320px) {
+        #bonus {
+          width: 44%;
+          padding-block-end: 0;
         }
       }
 
@@ -304,6 +318,10 @@
             <h1 class="highlightYellow">
               Register before midnight of <span id="dynamic-time">{time}</span>
             </h1>
+            <script src="commonFun.js">
+              import updateTime from "./commonFun.js";
+              updateTime();
+            </script>
           </div>
           <!-- bonus boxes -->
           <div id="bonus-container">
@@ -576,6 +594,7 @@
     </div>
 
     <!--  -->
+
     <script>
       const form1 = document.getElementById("form2");
       const formResponse = document.getElementById("formResponse");
@@ -650,7 +669,6 @@
       });
 
       /*  */
-
       /*   function showDiv(divId, showbutton) {
         // Hide all content divs
         div1.style.display = "none";
