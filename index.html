@@ -223,9 +223,9 @@
             class="styled-button"
             type="submit"
             id="submitChecked"
-            value="Send Answers"
+            onclick="redirectTo()"
           >
-            <a href="./SubmitAnswers.html">Go to Contact page</a>
+            Go to Contact page
           </button>
         </label>
         <div id="submissionMessage" class="message">
@@ -473,6 +473,10 @@
         <h1 class="highlightYellow">
           Register before midnight of <span id="dynamic-time">{time}</span>
         </h1>
+        <script src="commonFun.js">
+          import updateTime from "./commonFun.js";
+          updateTime();
+        </script>
       </div>
       <!-- bonus boxes -->
       <div id="bonus-container">
