@@ -35,6 +35,7 @@
           0px 10px 5px 0px rgba(0, 0, 0, 0.19);
         border-radius: 10px;
       }
+
       #ContactUs > div {
         width: calc(100% / 2);
         background-color: white;
@@ -51,6 +52,28 @@
         background-position-y: 0px;
         border-radius: 10px 0px 0px 10px;
       }
+      @media (max-width: 768px) {
+        /* Medium devices */
+        #ContactUs {
+          width: 95%;
+        }
+      }
+      @media (max-width: 426px) {
+        /* small devices */
+        #ContactUs > .box1 {
+          display: none;
+        }
+        #ContactUs > div {
+          width: 100%;
+        }
+      }
+      @media (max-width: 321px) {
+        /*ex  small devices */
+        #contactForm {
+          margin: 1rem;
+        }
+      }
+
       .box2 {
         background: rgb(255, 255, 255);
         background: -moz-linear-gradient(
@@ -123,9 +146,17 @@
     <div id="ContactUs">
       <div class="box1"></div>
       <div class="box2">
-         <!-- form -->
-        <form id="contactForm" action="https://api.web3forms.com/submit" method="post">
-          <input type="hidden" name="access_key" value="e94afb04-39ac-4e11-b27c-6fcf2a959355">
+        <!-- form -->
+        <form
+          id="contactForm"
+          action="https://api.web3forms.com/submit"
+          method="post"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="e94afb04-39ac-4e11-b27c-6fcf2a959355"
+          />
           <h2 style="margin-block-start: 0; font-size: 2rem">
             <span style="color: var(--highlightorange)">Confirm</span> Choices
           </h2>
